@@ -75,3 +75,15 @@ cv04 minimalni datum rok bez ohledu na mesic =
 MINX(FILTER(ALL(data),
 data[rok] = MAX(data[rok])),
 data[datum])
+
+________________________________________
+
+cv05 minimalni datum predchozi rok = 
+-- v danem mesici
+MINX(
+    FILTER(
+        ALL(data),
+    data[rok] = MAX(data[rok]) - 1
+    && data[mesic] = MAX(data[mesic])),
+data[datum])
+
