@@ -63,3 +63,8 @@ COUNTX(
     data[lokalita] = "RUZYNE"
     && data[srazky] >0),
 data[datum])
+
+__________________________________
+
+cv03 minimalni datum ruzyne = 
+MINX(FILTER(data,data[lokalita]="RUZYNE"),data[datum])
