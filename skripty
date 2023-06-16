@@ -116,3 +116,14 @@ MAXX(
     data[rok] = SELECTEDVALUE(data[rok])),
 data[maximalni_teplota])
 
+_____________________________________
+
+cv08 suma srazek kumulativne = 
+
+SUMX(
+    FILTER(
+        ALL(data),
+    data[rok] = SELECTEDVALUE(data[rok])
+    && data[mesic] <= SELECTEDVALUE(data[mesic])),
+data[srazky])
+
