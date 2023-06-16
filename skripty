@@ -133,4 +133,11 @@ cv09 pocet tropickych dnu ruzyne =
 COUNTX(
 FILTER(data,data[lokalita] = "RUZYNE" && data[maximalni_teplota] > 30),
 data[datum])
+_____________________________________
 
+12 kontrola filtru = 
+
+SWITCH(TRUE(),
+HASONEFILTER(data[rok]), "Ano, máš jediný rok",
+ISFILTERED(data[rok]), "Bohužel, máš více vybraných roků",
+"Nemáš vybráno nic")
