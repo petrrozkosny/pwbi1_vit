@@ -87,3 +87,32 @@ MINX(
     && data[mesic] = MAX(data[mesic])),
 data[datum])
 
+_______________________________________
+
+08 maximalni maximalni teplota lokalita = 
+
+-- maximum ze sloupce maximalni_teplota napric roky, ve vybrane lokalite
+IF(MAX(data[maximalni_teplota]) = 
+MAXX(
+    FILTER(
+        ALL(data),
+    data[lokalita] = SELECTEDVALUE(data[lokalita])),
+data[maximalni_teplota]),"TOMATO")
+
+__________________________________________
+
+
+09 vybrana lokalita = 
+
+"Vyvoj maximalnich teplot v lokalite "&SELECTEDVALUE(data[lokalita])
+
+__________________________________________
+
+10 maximalni teplota v roce napric lokalitami = 
+
+MAXX(
+    FILTER(
+        ALL(data),
+    data[rok] = SELECTEDVALUE(data[rok])),
+data[maximalni_teplota])
+
